@@ -114,6 +114,7 @@ var DataDebug = Ember.Object.extend(PortMixin, {
   releaseTypes: function() {
     if(this.releaseTypesMethod) {
       this.releaseTypesMethod();
+
       this.releaseTypesMethod = null;
       this.sentTypes = {};
     }
@@ -136,7 +137,7 @@ var DataDebug = Ember.Object.extend(PortMixin, {
   messages: {
     checkAdapter: function() {
       this.sendMessage('hasAdapter', { hasAdapter: !!this.get('adapter') });
-    },
+    }, 
 
     getModelTypes: function() {
       var self = this;
